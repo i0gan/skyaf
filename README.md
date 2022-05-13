@@ -1,4 +1,4 @@
-# avoid-ctf-py
+# CTF AVOID PY  [CTF中避免朋友交易]
 
 仓库地址：https://github.com/i0gan/ctf-avoid-py
 
@@ -22,7 +22,7 @@ CTF大赛中很实用的防止PY工具，国内的PY现象一个日渐泛滥，�
 选手->skyaf->pwn
 ```
 
-skyaf是作为选手和pwn服务的中介，传输的数据都要经过skyaf，这样skyaf只需吧数据记录下来就可以了。
+skyaf是作为选手电脑和pwn服务程序的中介，传输的数据都要经过skyaf，这样skyaf只需吧数据记录下来就可以了。
 
 skyaf不止是进行流量日志记录，且skyaf要求输入参数选手的账号以及选手的名字，若打通了之后，也加入了动态token验证，通过输入正确的token，才能获取正确的flag。
 
@@ -44,7 +44,7 @@ make
 
 ### 基于所给的例子来改
 
-我也给了个例子，在`examples/configure/pwnsky/docker/`下，着重看一下ctf.xinetd文件和skyaf.xinetd。这两个文件是xinetd服务的配置文件，相当于一个nginx的CGI一样。将二进制程序的标准IO映射成一个网络端口。ctf.xinetd文件基本就不用改，如下：
+我也给了个例子，在`examples/configure/pwnsky/docker/`下，着重看一下ctf.xinetd文件和skyaf.xinetd。这两个文件是xinetd服务的配置文件，相当于跟nginx的CGI一样。将二进制程序的标准IO映射成一个网络端口。ctf.xinetd文件基本就不用改，如下：
 
 ctf.xinetd
 
@@ -100,7 +100,7 @@ service skyaf
 
 ### 基于自己的docker文件来增加skyaf
 
-添加
+添加一个skyaf.xinetd文件，内容如下
 
 ```
 service skyaf
@@ -142,6 +142,10 @@ services:
 
 
 
+### 日志存放路径
+
+所抓取的日志是放在./skyaf_data下，在skyaf `makefile`中有定义，不出意外的话是在`/skyaf_data`下，里面的文件就是抓取到的攻击者所攻击的日志了。
+
 
 
 ## 如何对skyaf已抓取到日志流量进行审计？
@@ -174,6 +178,65 @@ mkdir -p data && find . | xargs grep  -l "right" 2>0 | xargs -i cp -L {} ./data
 进入到筛选出来提交正确的日志目录，在电脑上采用文件大小进行排序，然后两两依次向后对比，主要对比就是所交互的逻辑以及所交互的数据。
 
 
+
+下面是一个提交正确的日志内容，之后所要做的工作就是流量审计了。
+
+```
+// Date: 2021-11-27 03:22:56
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 0RAYS
+
+user_name: X1ng
+
+
+<-------------------- read ------------------>
+aa%17$lxaaaaaaaaaaaaaaaa
+
+r_0 = "\x61\x61\x25\x31\x37\x24\x6c\x78\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aa555b73acd9dcaaaaaaaaaaaaaaaa
+¿1Þªr Ú¬s[U--+--
+
+w_0 = "\x61\x61\x35\x35\x35\x62\x37\x33\x61\x63\x64\x39\x64\x63\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x0a\xbf\x31\xde\xaa\x92\x72\x92\xa0\xda\xac\x73\x5b\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+/bin/shaaaaaaaaaaaaaaaa¿1ÞªrÛ¬s[UÛ¬s[U$Û¬s[UØ¬s[U
+
+r_1 = "\x2f\x62\x69\x6e\x2f\x73\x68\x00\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x00\xbf\x31\xde\xaa\x92\x72\x92\x00\x00\x00\x00\x00\x00\x00\x00\x04\xdb\xac\x73\x5b\x55\x00\x00\x03\xdb\xac\x73\x5b\x55\x00\x00\x24\xdb\xac\x73\x5b\x55\x00\x00\x10\xd8\xac\x73\x5b\x55\x00\x00\x0a"
+
+<-------------------- write ----------------->
+/bin/sh
+w_1 = "\x2f\x62\x69\x6e\x2f\x73\x68"
+
+<-------------------- read ------------------>
+cat sky_token
+
+r_2 = "\x63\x61\x74\x20\x73\x6b\x79\x5f\x74\x6f\x6b\x65\x6e\x0a"
+
+<-------------------- write ----------------->
+2841E406060DE90F
+w_2 = "\x32\x38\x34\x31\x45\x34\x30\x36\x30\x36\x30\x44\x45\x39\x30\x46"
+
+<-------------------- read ------------------>
+exit
+logger: chall env released
+logger: sky_token_is_right
+
+r_3 = "\x65\x78\x69\x74\x0a"
+
+```
+
+上面的的数据方向是：
+
+write：二进制服务程序->选手
+
+read：选手-> 二进制服务程序
+
+提交正确token的日志中都会有`sky_token_is_right`字样
+
+里面说显示的反斜杠hex字符串是数据hex字符串，方便对一些不可显示字符进行对比。
 
 ### 判断依据
 
