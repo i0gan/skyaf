@@ -1,0 +1,8 @@
+version: '3'
+services:
+  axb_awd_pwn_runner:
+    image: axb_pwn_pwnsky
+    build: .
+    container_name: con_axb_pwn_pwnsky
+    ports:
+      - 20135:80

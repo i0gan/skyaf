@@ -1,0 +1,18 @@
+// Date: 2021-11-27 01:44:55
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 我想摸鱼
+
+user_name: Fangedaiwofei
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+��8aU--+--
+
+w_0 = "\x0a\xaa\xdf\x38\x61\x55\x2d\x2d\x2b\x2d\x2d\x0a"

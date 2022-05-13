@@ -1,0 +1,18 @@
+// Date: 2021-11-27 05:44:07
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: çº¢é»‘cat
+
+user_name: XuTu
+
+
+<-------------------- read ------------------>
+abcdefgh%11$08x
+
+r_0 = "\x61\x62\x63\x64\x65\x66\x67\x68\x25\x31\x31\x24\x30\x38\x78\x0a"
+
+<-------------------- write ----------------->
+abcdefghbb535100
+@Å-ý--+--
+
+w_0 = "\x61\x62\x63\x64\x65\x66\x67\x68\x62\x62\x35\x33\x35\x31\x30\x30\x0a\x40\xc5\x2d\x17\xfd\x7f\x2d\x2d\x2b\x2d\x2d\x0a"

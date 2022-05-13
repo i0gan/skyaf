@@ -1,0 +1,12 @@
+// Date: 2021-11-27 10:01:17
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: DLUT-SSS
+
+user_name: Upw1nd
+
+
+<-------------------- read ------------------>
+%17$p%11$p
+
+r_0 = "\x25\x31\x37\x24\x70\x25\x31\x31\x24\x70\x0a"

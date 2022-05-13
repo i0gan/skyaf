@@ -1,0 +1,14 @@
+// Date: 2021-11-27 02:43:59
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: GET / HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-Hans-CN,zh-Hans;q=0.5
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) C
+user_name: hrome/70.0.3538.102 Safari/537.36 Edge/18.18362
+Accept-Encoding: gzip, deflate
+Host: 47.108.195.119:20113
+Connection: Keep-Alive
+
+

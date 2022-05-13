@@ -1,0 +1,18 @@
+// Date: 2021-11-27 05:06:21
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: fxz
+
+user_name: wonderkamer
+
+
+<-------------------- read ------------------>
+ss
+
+r_0 = "\x73\x73\x0a"
+
+<-------------------- write ----------------->
+ss
+\ÕU--+--
+
+w_0 = "\x73\x73\x0a\x5c\xd5\x55\x2d\x2d\x2b\x2d\x2d\x0a"

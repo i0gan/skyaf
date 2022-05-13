@@ -1,0 +1,18 @@
+// Date: 2021-11-27 06:16:15
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 歪歪歪？
+
+user_name: Sauimezias
+
+
+<-------------------- read ------------------>
+s
+
+r_0 = "\x73\x0a"
+
+<-------------------- write ----------------->
+s
+F�V--+--
+
+w_0 = "\x73\x0a\x46\xa8\x1d\x56\x2d\x2d\x2b\x2d\x2d\x0a"

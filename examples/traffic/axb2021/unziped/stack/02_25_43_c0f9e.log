@@ -1,0 +1,30 @@
+// Date: 2021-11-27 02:25:43
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: SpecialRain
+
+user_name: SpecialRain
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+ä≈œ£U--+--
+
+w_0 = "\x0a\x8a\xc5\xcf\xa3\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+ä≈œ£Ulogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\x8a\xc5\xcf\xa3\x55"

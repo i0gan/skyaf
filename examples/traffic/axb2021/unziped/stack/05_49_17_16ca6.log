@@ -1,0 +1,32 @@
+// Date: 2021-11-27 05:49:17
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: SCA
+
+user_name: Jun
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+
+»>GV--+--
+
+w_0 = "\x0a\x0a\xbb\x3e\x47\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+
+»>GVlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\x0a\xbb\x3e\x47\x56"

@@ -1,0 +1,18 @@
+// Date: 2021-11-27 05:21:12
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 红黑cat
+
+user_name: XuTu
+
+
+<-------------------- read ------------------>
+hello
+
+r_0 = "\x68\x65\x6c\x6c\x6f\x0a"
+
+<-------------------- write ----------------->
+hello
+--+--
+
+w_0 = "\x68\x65\x6c\x6c\x6f\x0a\x2d\x2d\x2b\x2d\x2d\x0a"

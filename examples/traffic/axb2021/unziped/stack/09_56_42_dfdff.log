@@ -1,0 +1,18 @@
+// Date: 2021-11-27 09:56:42
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: DLUT-SSS
+
+user_name: Upw1nd
+
+
+<-------------------- read ------------------>
+ls
+
+r_0 = "\x6c\x73\x0a"
+
+<-------------------- write ----------------->
+ls
+hõU--+--
+
+w_0 = "\x6c\x73\x0a\x68\xf5\x55\x2d\x2d\x2b\x2d\x2d\x0a"

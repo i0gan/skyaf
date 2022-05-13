@@ -1,0 +1,30 @@
+// Date: 2021-11-27 05:35:05
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: MJU
+
+user_name: w9
+
+
+<-------------------- read ------------------>
+W9
+
+r_0 = "\x57\x39\x0a"
+
+<-------------------- write ----------------->
+W9
+ôiU--+--
+
+w_0 = "\x57\x39\x0a\xf4\x69\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+flag
+
+r_1 = "\x66\x6c\x61\x67\x0a"
+
+<-------------------- write ----------------->
+flag
+Ulogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x66\x6c\x61\x67\x0a\x55"

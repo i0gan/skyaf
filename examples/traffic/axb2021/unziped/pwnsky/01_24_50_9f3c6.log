@@ -1,0 +1,9 @@
+// Date: 2021-11-27 01:24:50
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: GET /server-info HTTP/1.1
+Client-DPAP-Version: 1.1
+User-Agent: iPhoto/9.1.1  (Macintosh; N; PPC)
+
+
+user_name: 

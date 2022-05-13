@@ -1,0 +1,18 @@
+// Date: 2021-11-27 05:16:52
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: flllllag
+
+user_name: memory
+
+
+<-------------------- read ------------------>
+123123
+
+r_0 = "\x31\x32\x33\x31\x32\x33\x0a"
+
+<-------------------- write ----------------->
+123123
+--+--
+
+w_0 = "\x31\x32\x33\x31\x32\x33\x0a\x2d\x2d\x2b\x2d\x2d\x0a"

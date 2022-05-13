@@ -1,0 +1,18 @@
+// Date: 2021-11-27 06:18:11
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: Gerontic_D1no
+
+user_name: 68
+
+
+<-------------------- read ------------------>
+%1$p
+
+r_0 = "\x25\x31\x24\x70\x0a"
+
+<-------------------- write ----------------->
+0x7ffcca4f05a0
+V--+--
+
+w_0 = "\x30\x78\x37\x66\x66\x63\x63\x61\x34\x66\x30\x35\x61\x30\x0a\x56\x2d\x2d\x2b\x2d\x2d\x0a"

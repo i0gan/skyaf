@@ -1,0 +1,31 @@
+// Date: 2021-11-27 02:15:35
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: Torchwood
+
+user_name: Krito
+
+
+<-------------------- read ------------------>
+asdasdasdassdsda
+
+r_0 = "\x61\x73\x64\x61\x73\x64\x61\x73\x64\x61\x73\x73\x64\x73\x64\x61\x0a"
+
+<-------------------- write ----------------->
+asdasdasdassdsda
+ƒ0ÿ--+--
+
+w_0 = "\x61\x73\x64\x61\x73\x64\x61\x73\x64\x61\x73\x73\x64\x73\x64\x61\x0a\x83\x01\x30\xff\x7f\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+sdasdasdassdsda
+ƒ0ÿlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\x73\x64\x61\x73\x64\x61\x73\x64\x61\x73\x73\x64\x73\x64\x61\x0a\x83\x01\x30\xff\x7f"

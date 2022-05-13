@@ -1,0 +1,12 @@
+// Date: 2021-11-27 05:22:07
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: Gleaf
+
+user_name: f1ag
+
+
+<-------------------- read ------------------>
+%17$p%11$pa
+
+r_0 = "\x25\x31\x37\x24\x70\x25\x31\x31\x24\x70\x61\x0a"

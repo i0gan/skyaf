@@ -1,0 +1,30 @@
+// Date: 2021-11-27 02:23:45
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 猛犸象
+
+user_name: swedsn
+
+
+<-------------------- read ------------------>
+aaa
+
+r_0 = "\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aaa
+'V--+--
+
+w_0 = "\x61\x61\x61\x0a\x27\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+aaa
+
+r_1 = "\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aaa
+'Vlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x61\x61\x61\x0a\x27\x56"

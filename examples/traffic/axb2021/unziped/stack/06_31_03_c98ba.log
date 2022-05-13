@@ -1,0 +1,30 @@
+// Date: 2021-11-27 06:31:03
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: å•¥ä¹Ÿä¸æ˜¯
+
+user_name: phantomor
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+ªèU--+--
+
+w_0 = "\x0a\xaa\x07\xe8\x9e\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+ls
+
+r_1 = "\x6c\x73\x0a"
+
+<-------------------- write ----------------->
+ls
+èUlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x6c\x73\x0a\xe8\x9e\x55"

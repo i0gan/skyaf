@@ -1,0 +1,17 @@
+// Date: 2021-11-27 09:29:47
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: %11$p%17$p
+user_name: 大哥带飞我负责躺
+
+
+<-------------------- read ------------------>
+VanZY
+
+r_0 = "\x56\x61\x6e\x5a\x59\x0a"
+
+<-------------------- write ----------------->
+VanZY
+--+--
+
+w_0 = "\x56\x61\x6e\x5a\x59\x0a\x2d\x2d\x2b\x2d\x2d\x0a"

@@ -1,0 +1,30 @@
+// Date: 2021-11-27 03:24:17
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 歪歪歪？
+
+user_name: xuemo
+
+
+<-------------------- read ------------------>
+ls
+
+r_0 = "\x6c\x73\x0a"
+
+<-------------------- write ----------------->
+ls
+�V--+--
+
+w_0 = "\x6c\x73\x0a\xc9\x15\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+id
+
+r_1 = "\x69\x64\x0a"
+
+<-------------------- write ----------------->
+id
+�Vlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x69\x64\x0a\xc9\x15\x56"

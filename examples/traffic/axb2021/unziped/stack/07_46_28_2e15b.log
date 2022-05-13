@@ -1,0 +1,31 @@
+// Date: 2021-11-27 07:46:28
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: XA21
+
+user_name: FEI
+
+
+<-------------------- read ------------------>
+FEI
+
+r_0 = "\x46\x45\x49\x0a"
+
+<-------------------- write ----------------->
+FEI
+ U--+--
+
+w_0 = "\x46\x45\x49\x0a\xa0\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+LS
+
+r_1 = "\x4c\x53\x0a"
+
+<-------------------- write ----------------->
+LS
+
+ Ulogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x4c\x53\x0a\x0a\xa0\x55"

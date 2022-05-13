@@ -1,0 +1,31 @@
+// Date: 2021-11-27 11:43:56
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 请输入你的队伍名称:assault
+
+user_name: dreamx
+
+
+<-------------------- read ------------------>
+ls
+
+r_0 = "\x6c\x73\x0a"
+
+<-------------------- write ----------------->
+ls
+k�U--+--
+
+w_0 = "\x6c\x73\x0a\x6b\xc2\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+q
+
+r_1 = "\x71\x0a"
+
+<-------------------- write ----------------->
+q
+
+k�Ulogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x71\x0a\x0a\x6b\xc2\x55"

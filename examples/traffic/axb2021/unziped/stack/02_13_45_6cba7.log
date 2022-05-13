@@ -1,0 +1,30 @@
+// Date: 2021-11-27 02:13:45
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: flag{}___Orz
+
+user_name: Lazzaro
+
+
+<-------------------- read ------------------>
+sss
+
+r_0 = "\x73\x73\x73\x0a"
+
+<-------------------- write ----------------->
+sss
+HV--+--
+
+w_0 = "\x73\x73\x73\x0a\x48\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+fff
+
+r_1 = "\x66\x66\x66\x0a"
+
+<-------------------- write ----------------->
+fff
+HVlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x66\x66\x66\x0a\x48\x56"

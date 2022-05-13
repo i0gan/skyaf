@@ -1,0 +1,17 @@
+// Date: 2021-11-27 05:45:53
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: GET / HTTP/1.1
+Host: 47.108.195.119:20113
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9
+user_name: .4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN
+Upgrade-Insecure-Requests: 1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+
+<-------------------- read ------------------>
+
+Accept-Encoding: gzip, deflate
+
+
+r_0 = "\x0a\x41\x63\x63\x65\x70\x74\x2d\x45\x6e\x63\x6f\x64\x69\x6e\x67\x3a\x20\x67\x7a\x69\x70\x2c\x20\x64\x65\x66\x6c\x61\x74\x65\x0d\x0a\x0d\x0a"

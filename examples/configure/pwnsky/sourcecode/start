@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#export LD_PRELOAD="./lib/liblua5.3.so.5.3 ./lib/libseccomp.so.2 ./lib/libm.so.6 ./lib/libdl.so.2 ./lib/libc.so.6"
+export LD_PRELOAD="./lib/liblua5.3.so.5.3 ./lib/libseccomp.so.2"
+#exec ./pwnsky
+gdb ./pwnsky

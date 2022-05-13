@@ -1,0 +1,22 @@
+#! /bin/bash
+
+#make clean
+#make
+strip --remove-section=.symtab pwnsky
+
+mkdir -p ./lib
+TARGET=pwnsky
+LIB_PATH=./lib
+
+ldd $TARGET |  awk '{print $3}' | xargs -i cp -L {} $LIB_PATH
+
+LD=ld-linux-x86-64.so.2
+LIB1=libc.so.6
+LIB2=libm.so.6
+LIB3=libdl.so.2
+LIB4=libseccomp.so.2
+LIB5=liblua5.3.so.5.3
+
+#patchelf ./pwnsky --set-interpreter ${LIB_PATH}/${LD} \
+#    --replace-needed ${LIB1} $LIB_PATH/${LIB1} \
+#    --output pwnsky

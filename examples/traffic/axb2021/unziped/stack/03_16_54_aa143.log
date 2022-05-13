@@ -1,0 +1,31 @@
+// Date: 2021-11-27 03:16:54
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: Mammoth
+
+user_name: swdsn
+
+
+<-------------------- read ------------------>
+swedsn
+
+r_0 = "\x73\x77\x65\x64\x73\x6e\x0a"
+
+<-------------------- write ----------------->
+swedsn
+--+--
+
+w_0 = "\x73\x77\x65\x64\x73\x6e\x0a\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+s
+
+r_1 = "\x73\x0a"
+
+<-------------------- write ----------------->
+s
+edsn
+logger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x73\x0a\x65\x64\x73\x6e\x0a"

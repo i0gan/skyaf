@@ -1,0 +1,16 @@
+// Date: 2021-11-27 01:12:11
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 16j
+
+user_name: ylz
+
+
+<-------------------- read ------------------>
+adsfkjsadflj
+
+r_0 = "\x61\x64\x73\x66\x6b\x6a\x73\x61\x64\x66\x6c\x6a\x0a"
+
+<-------------------- write ----------------->
+adsfkjsadflj
+V--+--

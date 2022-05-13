@@ -1,0 +1,30 @@
+// Date: 2021-11-27 08:51:52
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 
+
+user_name: Tajang
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+êý‘ÛU--+--
+
+w_0 = "\x0a\xea\xfd\x91\xdb\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+exit
+
+r_1 = "\x65\x78\x69\x74\x0a"
+
+<-------------------- write ----------------->
+exit
+Ulogger: chall env released
+logger: sky_token_is_right
+
+w_1 = "\x65\x78\x69\x74\x0a\x55"

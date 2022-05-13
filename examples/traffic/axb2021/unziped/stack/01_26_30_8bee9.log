@@ -1,0 +1,30 @@
+// Date: 2021-11-27 01:26:30
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 花果山
+
+user_name: huaguoshan
+
+
+<-------------------- read ------------------>
+ls
+
+r_0 = "\x6c\x73\x0a"
+
+<-------------------- write ----------------->
+ls
+--+--
+
+w_0 = "\x6c\x73\x0a\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+dir
+
+r_1 = "\x64\x69\x72\x0a"
+
+<-------------------- write ----------------->
+dir
+Vlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x64\x69\x72\x0a\x1f\x56"

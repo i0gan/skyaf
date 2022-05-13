@@ -1,0 +1,18 @@
+// Date: 2021-11-27 07:49:19
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 0xdddd
+
+user_name: 0xRGz
+
+
+<-------------------- read ------------------>
+1
+
+r_0 = "\x31\x0a"
+
+<-------------------- write ----------------->
+1
+|ͤU--+--
+
+w_0 = "\x31\x0a\x7c\xcd\xa4\x55\x2d\x2d\x2b\x2d\x2d\x0a"

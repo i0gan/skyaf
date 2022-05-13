@@ -1,0 +1,14 @@
+// Date: 2021-11-27 02:20:48
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: flag{}___Orz
+
+user_name: Lazzaro
+
+
+<-------------------- read ------------------>
+aaaaaaaaaaaaaaaaaaaaaaab
+r_0 = "\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x62"
+
+<-------------------- write ----------------->
+aaaaaaaaaaaaaaaaaaaaaaab--+--

@@ -1,0 +1,30 @@
+// Date: 2021-11-27 02:42:45
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 想寄就寄
+
+user_name: AndyG
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+jف$V--+--
+
+w_0 = "\x0a\x6a\xd9\x81\x24\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+jف$Vlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\x6a\xd9\x81\x24\x56"

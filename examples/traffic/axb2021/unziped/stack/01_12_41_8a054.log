@@ -1,0 +1,30 @@
+// Date: 2021-11-27 01:12:41
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: HN-zknu
+
+user_name: 18350193529
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+ªPHTV--+--
+
+w_0 = "\x0a\xaa\x50\x48\x54\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+ªPHTVlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\xaa\x50\x48\x54\x56"

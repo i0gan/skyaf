@@ -1,0 +1,30 @@
+// Date: 2021-11-27 03:26:43
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: å¤œåˆƒ
+
+user_name: æŒ‰æ—¶
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+Ê@ºU--+--
+
+w_0 = "\x0a\xca\x03\x40\xba\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+lslsafa
+
+r_1 = "\x6c\x73\x6c\x73\x61\x66\x61\x0a"
+
+<-------------------- write ----------------->
+lslsafa
+`È@ºUlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x6c\x73\x6c\x73\x61\x66\x61\x0a\x60\xc8\x03\x40\xba\x55"

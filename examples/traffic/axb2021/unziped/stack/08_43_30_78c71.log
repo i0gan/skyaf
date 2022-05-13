@@ -1,0 +1,30 @@
+// Date: 2021-11-27 08:43:30
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 做完签到就跑
+
+user_name: 福来哥
+
+
+<-------------------- read ------------------>
+a
+
+r_0 = "\x61\x0a"
+
+<-------------------- write ----------------->
+a
+��eU--+--
+
+w_0 = "\x61\x0a\xb2\xe5\x65\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+a
+
+r_1 = "\x61\x0a"
+
+<-------------------- write ----------------->
+a
+��eUlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x61\x0a\xb2\xe5\x65\x55"

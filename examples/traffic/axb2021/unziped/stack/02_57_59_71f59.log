@@ -1,0 +1,18 @@
+// Date: 2021-11-27 02:57:59
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: CySec2ST
+
+user_name: P1umH0
+
+
+<-------------------- read ------------------>
+aaaaaaa
+
+r_0 = "\x61\x61\x61\x61\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aaaaaaa
+`ÿ¡ÎU--+--
+
+w_0 = "\x61\x61\x61\x61\x61\x61\x61\x0a\x60\xd8\x16\xc1\xeb\x55\x2d\x2d\x2b\x2d\x2d\x0a"

@@ -1,0 +1,18 @@
+service skyaf
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = root
+    type        = UNLISTED
+    port        = 80
+    bind        = 0.0.0.0
+    server      = /skyaf
+    server_args = 127.0.0.1 8080 /home/ctf/sky_token d0g3{f2f82dc8faa12b715d90ff8f205a4cf6}
+    # safety options
+    per_source  = 5 # the maximum instances of this service per source IP address
+    rlimit_cpu  = 20 # the maximum number of CPU seconds that the service may use
+    rlimit_as  = 100M # the Address Space resource limit for the service
+    #access_times = 8:50-17:10
+}

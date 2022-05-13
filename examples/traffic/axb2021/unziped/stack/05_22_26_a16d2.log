@@ -1,0 +1,30 @@
+// Date: 2021-11-27 05:22:26
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 风信子
+
+user_name: wonderkmaker
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+:P3PV--+--
+
+w_0 = "\x0a\x3a\x50\x33\x50\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+:P3PVlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\x3a\x50\x33\x50\x56"

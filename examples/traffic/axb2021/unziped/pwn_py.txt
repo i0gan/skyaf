@@ -1,0 +1,82 @@
+pwn可疑流量
+
+pwnsky: 
+    可疑1:
+        team_name: Light1ng (未交flag)
+        user_name: Le1a
+
+        team_name: Gleaf
+        user_name: f1ag
+
+ezheap:
+    可疑1:
+        12_12_01_3ce94.log
+        team_name: DebuGGer
+        user_name: 677
+
+        09_33_45_560bc.log
+        team_name: 摸摸鱼
+        user_name: FW_C
+    
+    可疑2:
+        03_45_57_86352.log
+        team_name: haruki
+        user_name: haruki
+    
+        04_43_06_2533d.log
+        team_name: 问谛居
+        user_name: bestkasscn
+    
+        08_29_58_6cf9e.log
+        team_name: ZeU5
+        user_name: M1sceden4
+
+noleak:
+    可疑1:
+        02_49_46_23bc4.log
+        team_name: Light1ng
+        user_name: Le1a
+    
+        12_26_25_5e33f.log
+        team_name: DebuGGer
+        user_name: 677
+    
+    可疑2:
+        02_48_11_1186c.log
+        team_name: Light1ng
+        user_name: Le1a
+    
+        03_01_10_5326.log
+        team_name: Gleaf
+        user_name: f1ag
+
+        12_32_08_98a1c.log
+        team_name: Bulem00n
+        user_name: Bulem00n
+    
+    可疑3:
+        可疑做了流量混淆。
+        09_12_50_47647.log
+        team_name: Venom
+        user_name: Venom
+    
+        08_45_49_3eae9.log
+        team_name: N3X
+        user_name: 自闭ing
+    
+stack: 
+    题目逻辑过于简单，不用审查流量。
+
+    
+可疑队伍: 
+    4. Light1ng
+    6. Gleaf
+    9. DebuGGer
+    12. Bulem00n
+    13. N3X
+    18. 摸摸鱼
+    24. Venom
+    26. 问谛居
+    46. haruki
+    48. Zeu5
+    

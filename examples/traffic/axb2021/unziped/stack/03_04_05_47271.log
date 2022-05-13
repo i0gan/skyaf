@@ -1,0 +1,30 @@
+// Date: 2021-11-27 03:04:05
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: 我就来看看
+
+user_name: 冰雹
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+ڇ�aU--+--
+
+w_0 = "\x0a\xda\x87\xe9\x61\x55\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+ڇ�aUlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\xda\x87\xe9\x61\x55"

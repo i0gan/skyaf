@@ -1,0 +1,30 @@
+// Date: 2021-11-27 03:04:22
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: n03tAck
+
+user_name: Mumuzi
+
+
+<-------------------- read ------------------>
+
+
+r_0 = "\x0a"
+
+<-------------------- write ----------------->
+
+ºq=OV--+--
+
+w_0 = "\x0a\xba\x71\x3d\x4f\x56\x2d\x2d\x2b\x2d\x2d\x0a"
+
+<-------------------- read ------------------>
+
+
+r_1 = "\x0a"
+
+<-------------------- write ----------------->
+
+ºq=OVlogger: chall env released
+logger: sky_token_is_wrong
+
+w_1 = "\x0a\xba\x71\x3d\x4f\x56"

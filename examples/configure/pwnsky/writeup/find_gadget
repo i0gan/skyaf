@@ -1,0 +1,2 @@
+#! /bin/bash
+objdump -M intel -D libc.so.6 | grep "mov    rdx,QWORD PTR \[rdi+0x8\]"

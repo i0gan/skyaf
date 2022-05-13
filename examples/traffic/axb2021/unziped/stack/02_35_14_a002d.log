@@ -1,0 +1,18 @@
+// Date: 2021-11-27 02:35:14
+// SKYCTF PWN WAF
+// Deved By I0gan
+team_name: He1loW0r1d
+
+user_name: Neptunr
+
+
+<-------------------- read ------------------>
+s
+
+r_0 = "\x73\x0a"
+
+<-------------------- write ----------------->
+s
+¸ÙV--+--
+
+w_0 = "\x73\x0a\xb8\xd9\x18\x56\x2d\x2d\x2b\x2d\x2d\x0a"
