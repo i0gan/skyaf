@@ -10,6 +10,19 @@ CTF大赛中很实用的防止PY工具，国内的PY现象日渐泛滥，在这�
 
 
 
+## skyaf特点
+
+* 攻击选手信息记录
+* 攻击团队信息记录
+* 攻击时间记录
+
+* 攻击过程数据记录
+* 动态token机制
+* 验证token正确或失败记录
+* 人性化日志审计
+
+
+
 ## skyaf原理
 
 `skyaf`工具的思想是源自于我之前写了[pwn_waf](https://github.com/i0gan/pwn_waf)流量抓取工具中的转发模式。在docker内部网络中采用tcp非阻塞select进行转发了一下，并且对数据进行了日志写入。采用人工审计日志以及动态输入token，能够有一定程度防止PY。
@@ -115,10 +128,11 @@ service skyaf
     wait        = no
     user        = root
     type        = UNLISTED
-    port        = 80
+    port        = 80 # 这里是填写是你原来 ctf.xinetd 文件中的服务端口，也就是你之前内网所绑定服务的端口
     bind        = 0.0.0.0
     server      = /skyaf
     server_args = 127.0.0.1 8080 /home/ctf/sky_token d0g3{f2f82dc8faa12b715d90ff8f205a4cf6}
+    # server_args这里， 第一个参数是 转发的目标ip， 第二个是转发的目标端口，第三个是token生成路径，最后一个是flag，我这里已经写死了，flag当然也可以设置为动态flag，只不过，需要适配ctf平台。
     # safety options
     per_source  = 5 # the maximum instances of this service per source IP address
     rlimit_cpu  = 20 # the maximum number of CPU seconds that the service may use
@@ -127,9 +141,27 @@ service skyaf
 }
 ```
 
-skyaf.xinetd文件呢，把`d0g3{f2f82dc8faa12b715d90ff8f205a4cf6}` 改成你的flag，主要包含了个flag信息，其他的也可以不用改，更换flag的话就改这个配置文件。将编译好skyaf文件复制到docker文件目录下，且赋予可执行权限。
+skyaf.xinetd文件呢，主要关注点有两个，一个是port，另一个是server_args，port这里是填写是你原来 ctf.xinetd 文件中的服务端口，也就是你之前内网所绑定服务的端口。
 
-修改你自己的ctf.xinetd配置文件中的端口为8080，然后在docker启动容器的时候，将其内部的80映射为外部其他端口即可。比如说，我写了个docker-compose.yml
+```
+port        = 80
+```
+
+我上面默认就是80端口，因为我把80端口通过docker给穿透出去了。
+
+server_args这里
+
+```
+server_args = 127.0.0.1 8080 /home/ctf/sky_token d0g3{f2f82dc8faa12b715d90ff8f205a4cf6}
+```
+
+填写的内容稍许多一些， 第一个参数是 转发的目标ip， 第二个是转发的目标端口，第三个是token生成路径，最后一个是flag，我这里已经写死了，flag当然也可以设置为动态flag，只不过，需要适配ctf平台。把`d0g3{f2f82dc8faa12b715d90ff8f205a4cf6}` 改成你的flag，主要包含了个flag信息，其他的也可以不用改，如果夹目录不一样，那么就修改一下token生产目录的用户名称，我这里是ctf，也有可能你那里是pwn，那么就改成`/home/pwn/sky_token`。
+
+
+
+更换flag的话就改这个配置文件。将编译好skyaf文件复制到docker文件目录下，且赋予可执行权限。
+
+修改你自己的（ctf.xinetd，也有可能是pwn.xinetd）配置文件中的端口为8080，然后在docker启动容器的时候，将其内部的80映射为外部其他端口即可。比如说，我写了个docker-compose.yml。
 
 ```
 version: '3'
@@ -180,6 +212,32 @@ mkdir -p data && find . | xargs grep  -l "right" 2>0 | xargs -i cp -L {} ./data
 ```
 
 进入到筛选出来提交正确的日志目录，在电脑上采用文件大小进行排序，然后两两依次向后对比，主要对比就是所交互的逻辑以及所交互的数据。
+
+#### 查看攻击团队基本信息
+
+```bash
+for f in `find . -name "*.log"` 
+do 
+   echo ""
+   echo "文件名称：$f"  # 去掉的话可查看到相应的文件名称
+   echo "信息："
+   awk 'NR==1 || NR==4 || NR==6' $f
+done
+```
+
+以上脚本可以自己改一下方便统计，比如只查看攻击者名称
+
+```
+for f in `find . -name "*.log"` ;do;awk 'NR==6' $f;done
+```
+
+只查看攻击队伍
+
+```
+for f in `find . -name "*.log"` ;do;awk 'NR==4' $f;done
+```
+
+这样就方便我们统计啦！
 
 
 
