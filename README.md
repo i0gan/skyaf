@@ -1,10 +1,12 @@
-# CTF AVOID PY  [CTF中避免朋友交易]
+# Skyaf  [CTF解题赛中，PWN赛题流量监控系统]
 
 ## 前言
 
-仓库地址：https://github.com/i0gan/ctf-avoid-py
+仓库地址：https://github.com/i0gan/skyaf
 
 CTF大赛中很实用的防止PY工具，国内的PY现象日渐泛滥，在这种趋势下，想要赛选出真正有实力的选手还得看举办方的一个比赛规则的规定，也是举办方与参赛选手的一种对抗。再此呢，我开发了`skyaf`工具，在CTF PWN中十抓九准！曾经实践于2021安洵杯所有pwn题中，大家有兴趣的话，可以看一下当时的流量抓取情况，这里不提供审计结果报告，只提供原始数据。
+
+
 
 我也是本来想把这款软件技术写份专利的，但没有时间去搞这玩意儿，知识是拿来分享的，藏着也不行。我呢，目前也逐渐从CTF离开了，就把他公布出来吧，拯救一下国内严重泛滥的PY现象吧。自己之前写过选手博弈举办方的工具，比如[pwn_waf](https://github.com/i0gan/pwn_waf)，当然也配套有AWD批量攻击脚本 [awd_script](https://github.com/i0gan/awd_script)，这两个工具在打ctf awd模式的时候就爽歪歪了，除了安恒举办的awd plus。
 

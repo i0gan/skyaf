@@ -1,2 +1,2 @@
 #! /bin/bash
-socat TCP-LISTEN:1234,reuseaddr,fork EXEC:"./skyaf 1.12.220.15 20018 ./sky_token flag{}"
+socat TCP-LISTEN:1234,reuseaddr,fork EXEC:"./skyaf 47.108.29.107 10535 ./sky_token flag{1234}"

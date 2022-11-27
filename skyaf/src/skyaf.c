@@ -1,11 +1,14 @@
-#include "waf.h"
+#include "skyaf.h"
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <fcntl.h>
+// 提示说明：
+// 你需要通过程序漏洞去获取远程 /sky_token 文件内容，释放赛题后通过sky_token获取flag。
+// 请严格按照报名要求填写队伍名称以及选手id或名字
 
 
-const char logo_str[]      = "// SKYCTF PWN WAF\n// Deved By I0gan\n";
+const char logo_str[]      = "// skyaf github: https://github.com/i0gan/skyaf \n";
 const char read_str[]      = "\n<-------------------- read ------------------>\n";
 const char write_str[]     = "\n<-------------------- write ----------------->\n";
 
@@ -140,6 +143,34 @@ int connect_server(char* ip, ushort port) {
     return server_fd;
 }
 
+int block_read(int fd, char *buf, int length, int ms) {
+    // 等待 60 秒输入名称
+    int idx = 0;
+    int readed_len = 0;
+    for(int times = 0; times < ms; times++) {
+        int read_len = read(0, &buf[idx], 0x100);
+        usleep(1000); // 一毫秒
+        if(read_len < 0) { // timeout
+            continue;
+        } else if(read_len == 0) {
+            break;
+        } else if(read_len == 1) {
+            if(buf[idx] == '\n') {
+                buf[idx] = '\0';
+                break;
+            }
+            idx += 1;
+            readed_len += 1;
+        } else if(read_len > 0){
+            idx += read_len;
+            readed_len += read_len;
+            break;
+        }
+    }
+    
+    return readed_len;
+}
+
 int waf_run() {
     fd_set read_fds, test_fds;
     int client_read_fd = 0;
@@ -183,10 +214,26 @@ int waf_run() {
                         logger_write_str("logger: chall env released");
                         //writen(client_write_fd, send_buf, strlen(send_buf));
                         if(!strncmp(send_buf, chall_sky_token, strlen(chall_sky_token))) {
-                            get_flag();
+                            char team_name[0x100];
+                            char user_name[0x100];
+                            int read_len = 0;
                             logger_write_str("\nlogger: sky_token_is_right\n");
+                            print_str("\033[31;5mYour team name:\033[0m\n");
+                            // 等待 60 秒输入名称
+                            read_len = block_read(0, team_name, 0x100, 60 * 1000);
+                            logger_write_str("team_name: "); 
+                            logger_write(team_name, read_len);
+                            logger_write_str("\n"); 
+    
+                            print_str("\033[31;5mYour id name:\033[0m\n");
+                            read_len = block_read(0, user_name, 0x100, 60 * 1000);
+                            logger_write_str("user_name: "); 
+                            logger_write(user_name, read_len);
+                            logger_write_str("\n"); 
+
+                            get_flag();
                         }else {
-                            char *str = "\033[31;1msky_token错误\n\033[0m";
+                            char *str = "\033[31;1msky_token is wrong!\n\033[0m";
                             writen(client_write_fd, str, strlen(str));
                             logger_write_str("\nlogger: sky_token_is_wrong\n");
                         }
@@ -205,9 +252,10 @@ int waf_run() {
                 // 赛环境断开连接
                 if(write_size == 0) {
 
-                    char *str = "赛题环境已释放...";
-                    writen(client_write_fd, str, strlen(str));
-                    str = "\033[31;5m请输入你的sky_token:\033[0m";
+                    //char *str = "Chellenge env released";
+                    //writen(client_write_fd, str, strlen(str));
+
+                    char *str = "\033[31;5mYour sky_token:\033[0m";
                     writen(client_write_fd, str, strlen(str));
 
                     FD_CLR(server_fd, &read_fds);
@@ -269,10 +317,14 @@ void waf_init() {
 
 void get_flag() {
     char flag[0x101] = {0};
-    strncat(flag, "\033[32;2mYour flag: ", 0x100);
+    strncat(flag, "\033[32;2mHere is your flag: ", 0x100);
     strncat(flag, chall_flag, 0x100);
     strncat(flag, "\033[0m\n", 0x100);
     writen(1, flag, strlen(flag));
+}
+
+void print_str(const char *str) {
+    writen(1, str, strlen(str));
 }
 
 int init_chall_env() {
@@ -320,13 +372,13 @@ int main(int argc, char *argv[]) {
     // waf ip port sky_token_path flag
     // skyctf application firewall
     if(argc < 4) {
-        puts("saf [ip] [port] [sky_token_path] {flag}");
+        puts("skyaf [ip] [port] [sky_token_path] {flag}");
         return -1;
     }
     strcpy(chall_ip, argv[1]);
     chall_port = atoi(argv[2]);
     strcpy(chall_sky_token_path, argv[3]);
-    puts("\033[32;2m赛题初始化中...\033[0m");
+    //puts("\033[32;2m赛题初始化中...\033[0m");
     if(argc > 4) {
         strcpy(chall_flag, argv[4]);
     }else {
@@ -335,28 +387,8 @@ int main(int argc, char *argv[]) {
 
     waf_init();
     init_chall_env();
-    puts("\033[32;2m赛题初始化完成\033[0m");
 
-    char team_name[0x100];
-    char user_name[0x100];
-    int read_len = 0;
     
-    puts("\033[32;2m你需要通过程序漏洞去获取远程 /sky_token 文件内容，释放赛题后通过sky_token获取flag。\033[0m");
-    puts("\033[32;2m请严格按照报名要求填写队伍名称以及选手id或名字\033[0m");
-
-    puts("\033[31;5m请输入你的队伍名称:\033[0m");
-    read_len = read(0, team_name, 0x100);
-    logger_write_str("team_name: "); 
-    logger_write(team_name, read_len);
-    logger_write_str("\n"); 
-    
-    puts("\033[31;5m请输入你的id或名字:\033[0m");
-    read_len = read(0, user_name, 0x100);
-
-    logger_write_str("user_name: "); 
-    logger_write(user_name, read_len);
-    logger_write_str("\n"); 
-
     waf_run();
 
     waf_write_hex_log();
